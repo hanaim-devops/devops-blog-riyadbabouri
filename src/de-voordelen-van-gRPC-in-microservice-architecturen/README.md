@@ -1,4 +1,4 @@
-# Onderzoek: De Voordelen van gRPC in Microservice-Architecturen
+# Onderzoek: De voordelen van gRPC in microservice-architecturen
 
 ## Inleiding
 In de wereld van softwareontwikkeling zijn microservices een populaire architecturale stijl geworden. Deze aanpak maakt het mogelijk om complexe applicaties te bouwen door ze op te splitsen in kleinere, onafhankelijke diensten. Maar hoe communiceren deze microservices met elkaar? Hier komt gRPC om de hoek kijken. Deze blog verkent de voordelen van gRPC binnen microservice-architecturen in vergelijking met andere communicatiestandaarden, zoals REST.
@@ -91,12 +91,16 @@ In een op microservices gebaseerde software-architectuur is inter-process commun
 - **Asynchronous Communication**: In tegenstelling tot synchronisatie, houdt asynchrone communicatie in dat een service een bericht verzendt zonder een onmiddellijke reactie te verwachten. Meerdere services kunnen deze berichten potentieel afhandelen en verwerken.
 
 
+## Stapsgewijze implementatie van gRPC
+
+TBD
+
 
 ## Conclusie
 gRPC biedt aanzienlijke voordelen binnen microservice-architecturen, met name op het gebied van prestaties en efficiëntie. Dankzij de ondersteuning voor binaire communicatie via Protocol Buffers, en de voordelen van HTTP/2 zoals multiplexing en bidirectionele streaming, stelt gRPC ontwikkelaars in staat om systemen te bouwen die sneller en schaalbaarder zijn dan traditionele REST-oplossingen. Hoewel REST een bewezen en populaire keuze blijft, laat gRPC zien dat het, vooral in omgevingen waar lage latentie en hoge doorvoer essentieel zijn, een krachtig alternatief biedt. Voor moderne microservices-architecturen, waar snelle en efficiënte communicatie cruciaal is, is gRPC vaak de betere keuze.## gRPC versus REST
 
 
-Voor wie geïnteresseerd is in de technische details en meer over gRPC wil leren, is de [gRPC Motivation and Design Principles](https://grpc.io/docs/guides/motivation/) een uitstekende bron.
+Voor wie geïnteresseerd is in de technische details en meer over gRPC wil leren, is de [gRPC: get started](https://grpc.io/docs/what-is-grpc/introduction/) een uitstekende bron.
 
-Als je meer wilt weten over de specifieke toepassingen van gRPC in microservices, bekijk dan deze [link](https://www.linkedin.com/pulse/microservices-communication-using-grpc-protocol-prabhat-pankaj).
+Als je meer wilt weten over de specifieke toepassingen van gRPC in microservices, bekijk dan deze [link](https://www.linkedin.com/pulse/microservices-communication-using-grpc-protocol-prabhat-pankaj).    
 

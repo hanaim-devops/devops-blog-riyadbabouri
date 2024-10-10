@@ -7,26 +7,20 @@ Dit onderzoeksplan richt zich op de voordelen die gRPC biedt binnen microservice
 **Welke voordelen biedt gRPC in een microservice-architectuur ten opzichte van andere communicatiestandaarden?**
 
 ## Deelvragen
-1. **Wat is gRPC?**
+1. **Wat is gRPC? (Onderzoeksmethoden: (Library: Literature study))**
    - In deze sectie leggen we uit wat gRPC is, inclusief zijn kenmerken, doeleinden en architectuur.
 
-2. **Hoe verhoudt gRPC zich tot REST?**
+2. **Hoe verhoudt gRPC zich tot REST? (Onderzoeksmethoden: (Library: Literature study))**
    - Deze vraag behandelt de vergelijking tussen gRPC en REST, waarbij we aspecten zoals prestaties, gebruiksgemak en protocoloverhead analyseren.
 
-3. **Wat zijn de prestaties en schaalbaarheidsvoordelen van gRPC in een microservice-architectuur?**
+3. **Wat zijn de prestaties en schaalbaarheidsvoordelen van gRPC in een microservice-architectuur? (Onderzoeksmethoden: (Library: Literature study))**
    - We onderzoeken hoe gRPC de prestaties en schaalbaarheid van microservices kan verbeteren door gebruik te maken van technieken zoals multiplexing en lage latentie.
 
-
-## Onderzoeksmethoden
-- **Literatuuronderzoek**: Bestuderen van relevante boeken, artikelen en papers over gRPC en microservices.
-- **Case studies**: Analyseren van bestaande implementaties van gRPC in microservices.
-- **Interviews**: In gesprek gaan met ontwikkelaars die ervaring hebben met gRPC.
-
 ## Bronnen
-1. *gRPC: A high-performance, open-source universal RPC framework* (gRPC, 2023)
-2. *Microservices Patterns* (Chris Richardson, 2020)
-3. *Understanding REST: From HTTP to RESTful APIs* (M. Smith, 2021)
-4. *Designing Data-Intensive Applications* (Martin Kleppmann, 2017)
+1. [*gRPC: A high-performance, open-source universal RPC framework* (gRPC, 2023)](https://grpc.io/about/)
+2. [linkedin story about the usage of gRPC](https://www.linkedin.com/pulse/microservices-communication-using-grpc-protocol-prabhat-pankaj).
+3. [*gRPC: Get started with gRPC*](https://grpc.io/docs/what-is-grpc/introduction/)
+4. 
 
 ## Conclusie
 Dit onderzoeksplan biedt een kader voor het onderzoeken van de voordelen van gRPC binnen microservice-architecturen. Door de bovenstaande deelvragen en onderzoeksmethoden te volgen, hopen we waardevolle inzichten te verwerven.
