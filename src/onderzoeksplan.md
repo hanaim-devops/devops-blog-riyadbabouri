@@ -20,7 +20,8 @@ Dit onderzoeksplan richt zich op de voordelen die gRPC biedt binnen microservice
 1. [*gRPC: A high-performance, open-source universal RPC framework* (gRPC, 2023)](https://grpc.io/about/)
 2. [linkedin story about the usage of gRPC](https://www.linkedin.com/pulse/microservices-communication-using-grpc-protocol-prabhat-pankaj).
 3. [*gRPC: Get started with gRPC*](https://grpc.io/docs/what-is-grpc/introduction/)
-4. 
+4. [*gRPC vs REST](https://aws.amazon.com/compare/the-difference-between-grpc-and-rest/)
+5. 
 
 ## Conclusie
 Dit onderzoeksplan biedt een kader voor het onderzoeken van de voordelen van gRPC binnen microservice-architecturen. Door de bovenstaande deelvragen en onderzoeksmethoden te volgen, hopen we waardevolle inzichten te verwerven.

@@ -1,99 +1,67 @@
-# Onderzoek: De voordelen van gRPC in microservice-architecturen
+# De voordelen van gRPC in microservice-architecturen
 
 ## Inleiding
 In de wereld van softwareontwikkeling zijn microservices een populaire architecturale stijl geworden. Deze aanpak maakt het mogelijk om complexe applicaties te bouwen door ze op te splitsen in kleinere, onafhankelijke diensten. Maar hoe communiceren deze microservices met elkaar? Hier komt gRPC om de hoek kijken. Deze blog verkent de voordelen van gRPC binnen microservice-architecturen in vergelijking met andere communicatiestandaarden, zoals REST.
 
 
-## Wat is gRPC?
-gRPC, ontwikkeld door Google, is een modern open-source framework voor Remote Procedure Calls (RPC). Het is ontworpen om efficiënte communicatie tussen gedistribueerde systemen mogelijk te maken, waarbij het gebruik maakt van Protocol Buffers (protobuf) als interface-definitietaal. gRPC ondersteunt meerdere programmeertalen, waardoor het een veelzijdige keuze is voor ontwikkelaars.
+## gRPC
+gRPC, ontwikkeld door Google, is een open-source framework voor Remote Procedure Calls (RPC). Het is ontworpen voor efficiënte communicatie tussen gedistribueerde systemen en maakt gebruik van Protocol Buffers (protobuf) als interface-definitietaal. Protobuf is een lichtgewicht en efficiënt gegevensserialisatieformaat dat de structuur van gegevens definieert in een eenvoudig leesbaar formaat, waardoor gegevens snel kunnen worden verzonden en ontvangen. Dit maakt gRPC een veelzijdige keuze voor ontwikkelaars, omdat het ondersteunt datacommunicatie in meerdere programmeertalen.
 
-### Wie Gebruikt gRPC en Waarom?
-Steeds meer bedrijven stappen over op gRPC. Organisaties zoals Square en Netflix hebben al de voordelen van gRPC omarmd en hebben hun eigen systemen aangepast om gebruik te maken van deze technologie. Ze benadrukken de verbeterde prestaties, de eenvoud van integratie en de mogelijkheid om complexe systemen te beheren.
+Steeds meer bedrijven stappen over op gRPC. Organisaties zoals Square en Netflix hebben de voordelen van deze technologie al omarmd en hun systemen aangepast. Ze benadrukken de verbeterde prestaties, de eenvoud van integratie en de mogelijkheid om complexe systemen te beheren.
 
 ![netflix-logo](./plaatjes/netflix-logo.png)
 
-Figuur 1: <ins>Netflix company integrates gRPC</ins>.
+Figuur 1: <ins>Netflix gebruikt gRPC in hun architectuur</ins>.
 
-### Kenmerken van gRPC
-Een van de grootste voordelen van gRPC is de hoge prestaties die het biedt. Door gebruik te maken van HTTP/2 kunnen ontwikkelaars profiteren van multiplexing, server push en efficiënte connectiebeheer. Bovendien maakt het gRPC mogelijk om verschillende communicatiestijlen te ondersteunen, waaronder eenvoudige aanroepen en bidirectionele streaming.
+Een van de grootste voordelen van gRPC is de hoge prestaties. Dit wordt mede mogelijk gemaakt door het gebruik van HTTP/2, een modern transportprotocol dat aanzienlijke verbeteringen biedt ten opzichte van zijn voorganger, HTTP/1.1. HTTP/2 ondersteunt multiplexing, wat betekent dat meerdere verzoeken gelijktijdig over dezelfde verbinding kunnen worden verzonden. Dit vermindert de latentie en verhoogt de efficiëntie van de communicatie. Daarnaast biedt HTTP/2 server push-functionaliteit, wat het mogelijk maakt om data vooraf te verzenden voordat de client erom vraagt, waardoor de snelheid verder toeneemt.
 
-### Toepassingen van gRPC
-gRPC is bij uitstek geschikt voor microservices-architecturen, waar verschillende diensten efficiënt met elkaar moeten communiceren. Het biedt niet alleen lage latentie, maar ook een hoge doorvoer, wat cruciaal is voor toepassingen die real-time gegevensuitwisseling vereisen.
+![http2](./plaatjes/http2.png)
+
+Figuur 2: <ins>Overzicht van de werking van http2</ins>.
+
+Daarnaast ondersteunt gRPC verschillende communicatiestijlen, waaronder eenvoudige aanroepen en bidirectionele streaming. Dit maakt het bijzonder geschikt voor microservices-architecturen, waar verschillende diensten effectief met elkaar moeten communiceren. gRPC biedt niet alleen lage latentie, maar ook een hoge doorvoer, wat cruciaal is voor toepassingen die real-time gegevensuitwisseling vereisen.
 
 ![gprc-flow](./plaatjes/grpc-flow.png)
 
-Figuur 2: <ins>Example usage of gRPC in a microservice </ins>.
-
-## gRPC versus REST
-
-Om de voordelen van gRPC volledig te begrijpen, is het belangrijk om te kijken naar de traditionele REST-architectuur. REST (Representational State Transfer) is een populaire stijl voor netwerkgebaseerde applicaties, waarbij gebruik wordt gemaakt van standaard HTTP-methoden. RESTful API's zijn stateless, wat betekent dat elke aanvraag onafhankelijk is en alle benodigde informatie moet bevatten.
-
-### Kernprincipes van REST
-
-REST heeft zijn eigen voordelen, zoals eenvoud en breed gebruik. Het is resource-gebaseerd en maakt gebruik van verschillende dataformaten zoals JSON en XML. Echter, in een microservices-architectuur kan gRPC vaak betere prestaties leveren dan REST, vooral in omgevingen waar snelheid en efficiëntie cruciaal zijn.
-
-### Wat is REST?
-
-REST is de meest populaire architecturale stijl voor het bouwen van API's. In een RESTful architectuur worden resources geïdentificeerd door URI's (Uniform Resource Identifiers), en operaties worden uitgevoerd op die resources met behulp van een standaard set van HTTP-methoden. Resources worden vertegenwoordigd in JSON of XML, die tussen de client en server worden overgedragen in de HTTP-verzoeken en -antwoorden.
-
-### Belangrijke overeenkomsten: gRPC vs. REST
-
-- **Client/server-architectuur**: Beide gRPC en REST volgen de client-serverarchitectuur, waarbij clients verzoeken verzenden en servers reageren door gegevens te retourneren of acties uit te voeren.
-- **Gebruik van HTTP**: gRPC en REST gebruiken beide HTTP als hun onderliggende transportprotocol. REST maakt gebruik van HTTP/1.1, terwijl gRPC HTTP/2 gebruikt.
-- **Ondersteuning voor meerdere programmeertalen**: Zowel gRPC als REST zijn taalagnostisch, wat betekent dat clients en servers in verschillende programmeertalen kunnen worden geïmplementeerd.
-- **Statelessness**: Beide gRPC en REST zijn ontworpen om stateless te zijn, wat betekent dat elke aanvraag alle informatie bevat die de server nodig heeft om deze te verwerken.
-
-### Belangrijkste verschillen: gRPC vs. REST
-
-Hoewel gRPC en REST verschillende fundamenten delen, verschillen ze sterk in hun architectonisch ontwerp en implementatiedetails. De belangrijkste verschillen zijn:
-
-1. **Gegevensformaat**: REST gebruikt meestal tekstgebaseerde formaten zoals JSON en XML, terwijl gRPC Protobuf gebruikt om gegevens in een binair formaat te coderen. Dit maakt gRPC efficiënter in dataverkeer.
-
-2. **Gegevensvalidatie**: Met gRPC definieert de ontwikkelaar service- en berichttypes met Protobuf, wat automatische validatie van berichten mogelijk maakt. REST vereist extra validatiestappen, wat meer verwerkingstijd kost.
-
-3. **Communicatiepatroon**: REST volgt een eenmalige aanvraag/antwoord-cyclus, terwijl gRPC verschillende communicatiepatronen ondersteunt, waaronder serverstreaming, clientstreaming en bidirectionele streaming, dankzij HTTP/2.
-
-4. **Ontwerppatroon**: gRPC APIs definiëren oproepbare functies op de server, terwijl REST APIs een resource-georiënteerd ontwerp hebben, waarbij standaard HTTP-methoden worden gebruikt om toegang te krijgen tot resources via specifieke API-eindpunten.
-
-5. **Codegeneratie**: gRPC's gebruik van Protobuf ondersteunt codegeneratie in verschillende programmeertalen, wat een efficiënter ontwikkelproces mogelijk maakt. REST biedt deze native ondersteuning niet.
-
-### Wanneer gRPC vs. REST gebruiken?
-
-REST is de meest gebruikte API-architectuur vandaag de dag. Het is eenvoudiger om mee te werken en te leren dan gRPC, en het is compatibel met de meeste programmeertalen en platforms. REST is de ideale keuze voor het creëren van een openbare API.
-
-gRPC is daarentegen beter geschikt voor microservices-architecturen, waar hoge efficiëntie, lage latentie en ondersteuning voor verschillende programmeertalen vereist zijn. gRPC is de betere keuze voor toepassingen die real-time interacties vereisen, zoals chat- en video-applicaties, vanwege zijn bi-directionele streamingcapaciteiten en efficiënte gegevensverwerking.
-
-Met deze inzichten in de verschillen en overeenkomsten tussen gRPC en REST, kun je een weloverwogen keuze maken over welke technologie het beste past bij jouw specifieke gebruiksscenario's en vereisten.
+Figuur 3: <ins>Voorbeeld gebruik van gRPC in een microservice</ins>.
 
 
-### Waarom gRPC voor Microservices Communicatie?
-Om de beperkingen die vaak worden aangetroffen in RESTful diensten aan te pakken, is er een groeiende behoefte aan een modern inter-process communicatiesysteem dat schaalbaarheid en superieure efficiëntie biedt. Hier komt gRPC om de hoek kijken, een geavanceerd open-source RPC-framework.
+## gRPC vs. REST
+Om de voordelen van gRPC volledig te begrijpen, is het belangrijk om de traditionele REST-architectuur te bekijken. REST (Representational State Transfer) is een populaire stijl voor netwerkgebaseerde applicaties die gebruikmaakt van standaard HTTP-methoden. RESTful API's zijn stateless, wat betekent dat elke aanvraag onafhankelijk is en alle benodigde informatie bevat.
 
-Het gRPC-framework maakt gebruik van een binair coderingsformaat genaamd Protocol Buffers en opereert bovenop HTTP/2. Het biedt sterke typing, ondersteunt meerdere programmeertalen en faciliteert bidirectionele streaming voor zowel client- als serverzijde. Dit maakt gRPC bijzonder effectief voor het bouwen van robuuste microservice-architecturen die hoge prestaties en schaalbaarheid vereisen.
+REST heeft voordelen zoals eenvoud en brede toepassing. Het is resource-gebaseerd en ondersteunt verschillende dataformaten zoals JSON en XML. In microservices-architecturen kan gRPC echter vaak betere prestaties leveren, vooral waar snelheid en efficiëntie cruciaal zijn.
 
-De combinatie van hoge prestaties, lage latentie en krachtige communicatie mogelijkheden maakt gRPC een uitstekende keuze voor moderne microservices-architecturen. Door de overstap naar gRPC kunnen organisaties profiteren van snellere, efficiëntere en schaalbare systemen die beter zijn afgestemd op de eisen van hedendaagse applicaties.
+REST is de meest gebruikte architecturale stijl voor API's. In een RESTful architectuur worden resources geïdentificeerd door URI's (Uniform Resource Identifiers) en operaties uitgevoerd met een standaardset van HTTP-methoden. Resources worden vertegenwoordigd in JSON of XML, die tussen client en server worden overgedragen via HTTP-verzoeken en -antwoorden.
 
-## De Voordelen van gRPC in Microservices
+GRPC en REST delen enkele belangrijke overeenkomsten. Beide volgen de client-serverarchitectuur, waarbij clients verzoeken verzenden en servers reageren. Ze gebruiken HTTP als onderliggend transportprotocol, waarbij REST HTTP/1.1 en gRPC HTTP/2 gebruikt. Beide zijn taalagnostisch, wat betekent dat ze in verschillende programmeertalen kunnen worden geïmplementeerd. Verder zijn ze ontworpen om stateless te zijn, zodat elke aanvraag alle informatie bevat die nodig is voor verwerking.
 
-Nu we een basisbegrip hebben van gRPC en REST, laten we eens kijken naar de specifieke voordelen die gRPC biedt in microservice-architecturen.
+Ondanks deze overeenkomsten verschillen gRPC en REST sterk in architectonisch ontwerp en implementatiedetails. De belangrijkste verschillen zijn:
 
-### Verbetering van Prestaties
-gRPC maakt gebruik van multiplexing, waardoor meerdere verzoeken en antwoorden gelijktijdig over dezelfde verbinding kunnen worden verzonden. Dit vermindert de overhead van het openen en sluiten van verbindingen, wat resulteert in snellere communicatie. Dit is vooral waardevol in omgevingen waar veel microservices met elkaar moeten communiceren.
+1. **Gegevensformaat:** REST gebruikt meestal tekstgebaseerde formaten zoals JSON en XML, terwijl gRPC Protobuf hanteert om gegevens in binair formaat te coderen, wat efficiënter is.
 
-### Lage Latentie
-Bovendien is gRPC geoptimaliseerd voor lage latentie, wat het bijzonder geschikt maakt voor toepassingen die real-time interacties vereisen. Dit is vooral waardevol in cloud-gebaseerde architecturen waar verschillende microservices met elkaar moeten communiceren.
+2. **Gegevensvalidatie:** Bij gRPC definieert de ontwikkelaar service- en berichttypes met Protobuf, wat automatische validatie van berichten mogelijk maakt. REST vereist extra validatiestappen, wat meer verwerkingstijd kost.
 
-### Microservices Inter-process Communicatie
-In een op microservices gebaseerde software-architectuur is inter-process communicatie essentieel voor het uitwisselen van informatie. Microservices kunnen met elkaar communiceren via twee primaire communicatie mechanismen:
+3. **Communicatiepatroon:** REST volgt een eenmalige aanvraag/antwoord-cyclus, terwijl gRPC verschillende communicatiepatronen ondersteunt, zoals serverstreaming, clientstreaming en bidirectionele streaming dankzij HTTP/2.
 
-- **Synchronous Communication (Request-Reply)**: In deze modus initieert één service de communicatie door een API aan te roepen die door een andere service wordt aangeboden en wacht vervolgens op een antwoord. Voor effectief gebruik moet de API goed gedefinieerde semantiek hebben en versiebeheer ondersteunen.
-  
-- **Asynchronous Communication**: In tegenstelling tot synchronisatie, houdt asynchrone communicatie in dat een service een bericht verzendt zonder een onmiddellijke reactie te verwachten. Meerdere services kunnen deze berichten potentieel afhandelen en verwerken.
+4. **Ontwerppatroon:** gRPC APIs definiëren oproepbare functies op de server, terwijl REST APIs een resource-georiënteerd ontwerp hebben dat gebruikmaakt van standaard HTTP-methoden.
+
+5. **Codegeneratie:** gRPC's gebruik van Protobuf ondersteunt codegeneratie in verschillende programmeertalen, wat het ontwikkelproces versnelt. REST biedt deze ondersteuning niet standaard.
+
+REST is momenteel de meest gebruikte API-architectuur. Het is eenvoudiger te leren en compatibel met de meeste programmeertalen en platforms, waardoor het ideaal is voor openbare API's. gRPC is beter geschikt voor microservices-architecturen, waar hoge efficiëntie, lage latentie en ondersteuning voor verschillende programmeertalen vereist zijn. Het is de betere keuze voor toepassingen die real-time interacties vereisen, zoals chat- en video-applicaties, vanwege de bidirectionele streamingcapaciteiten en efficiënte gegevensverwerking.
+
+Met deze inzichten in de verschillen en overeenkomsten tussen gRPC en REST kun je een weloverwogen keuze maken over welke technologie het beste past bij jouw specifieke gebruiksscenario's en vereisten.
+
+
+## Waarom gRPC voor Microservices Communicatie?
+Om de beperkingen die vaak worden aangetroffen in RESTful diensten aan te pakken, is er een groeiende behoefte aan een modern inter-process communicatiesysteem dat schaalbaarheid en superieure efficiëntie biedt. Hier komt gRPC om de hoek kijken, een geavanceerd open-source RPC-framework. Dit framework maakt gebruik van een binair coderingsformaat genaamd Protocol Buffers en opereert bovenop HTTP/2. Het biedt sterke typing, ondersteunt meerdere programmeertalen en faciliteert bidirectionele streaming voor zowel client- als serverzijde. Hierdoor is gRPC bijzonder geschikt voor het bouwen van robuuste microservice-architecturen die hoge prestaties en schaalbaarheid vereisen.
+
+De combinatie van hoge prestaties, lage latentie en krachtige communicatiemogelijkheden maakt gRPC een uitstekende keuze voor moderne microservices. Door over te stappen naar gRPC kunnen organisaties profiteren van snellere en schaalbare systemen die beter zijn afgestemd op de eisen van hedendaagse applicaties. Nu we een basisbegrip hebben van gRPC en REST, laten we kijken naar de specifieke voordelen die gRPC biedt in microservice-architecturen. gRPC maakt gebruik van multiplexing, waardoor meerdere verzoeken en antwoorden gelijktijdig over dezelfde verbinding kunnen worden verzonden. Dit vermindert de overhead van het openen en sluiten van verbindingen, wat resulteert in snellere communicatie, vooral in omgevingen waar veel microservices met elkaar moeten samenwerken.
+
+Bovendien is gRPC geoptimaliseerd voor lage latentie, wat het bijzonder geschikt maakt voor toepassingen die real-time interacties vereisen, zoals in cloud-gebaseerde architecturen. In een microservices-architectuur is inter-process communicatie essentieel voor het uitwisselen van informatie. Microservices kunnen met elkaar communiceren via twee primaire mechanismen: Synchronous Communication (Request-Reply), waarbij één service de communicatie initieert door een API aan te roepen die door een andere service wordt aangeboden en wacht op een antwoord; en Asynchronous Communication, waarbij een service een bericht verzendt zonder een onmiddellijke reactie te verwachten. Meerdere services kunnen deze berichten potentieel afhandelen en verwerken.
 
 
 ## Stapsgewijze implementatie van gRPC
 
-TBD
 
 
 ## Conclusie
