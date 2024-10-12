@@ -179,22 +179,16 @@ Met deze stappen heb je een functionerende gRPC-server en client opgezet in Node
 
 
 ## Conclusie
-gRPC biedt aanzienlijke voordelen binnen microservice-architecturen, met name op het gebied van prestaties en efficiëntie. Dankzij de ondersteuning voor binaire communicatie via Protocol Buffers, en de voordelen van HTTP/2 zoals multiplexing en bidirectionele streaming, stelt gRPC ontwikkelaars in staat om systemen te bouwen die sneller en schaalbaarder zijn dan traditionele REST-oplossingen. Hoewel REST een bewezen en populaire keuze blijft, laat gRPC zien dat het, vooral in omgevingen waar lage latentie en hoge doorvoer essentieel zijn, een krachtig alternatief biedt. Voor moderne microservices-architecturen, waar snelle en efficiënte communicatie cruciaal is, is gRPC vaak de betere keuze.## gRPC versus REST
-
-
-Voor wie geïnteresseerd is in de technische details en meer over gRPC wil leren, is de [gRPC: get started](https://grpc.io/docs/what-is-grpc/introduction/) een uitstekende bron.
-
-Als je meer wilt weten over de specifieke toepassingen van gRPC in microservices, bekijk dan deze [link](https://www.linkedin.com/pulse/microservices-communication-using-grpc-protocol-prabhat-pankaj).    
+gRPC biedt aanzienlijke voordelen binnen microservice-architecturen, met name op het gebied van prestaties en efficiëntie. Dankzij de ondersteuning voor binaire communicatie via Protocol Buffers, en de voordelen van HTTP/2 zoals multiplexing en bidirectionele streaming, stelt gRPC ontwikkelaars in staat om systemen te bouwen die sneller en schaalbaarder zijn dan traditionele REST-oplossingen. Hoewel REST een bewezen en populaire keuze blijft, laat gRPC zien dat het, vooral in omgevingen waar lage latentie en hoge doorvoer essentieel zijn, een krachtig alternatief biedt. Voor moderne microservices-architecturen, waar snelle en efficiënte communicatie cruciaal is, is gRPC vaak de betere keuze.
 
 
 ## Bronnen
+1. **Quick start. (2023, August 2). gRPC.** https://grpc.io/docs/languages/node/quickstart/
 
-Quick start. (2023, August 2). gRPC. https://grpc.io/docs/languages/node/quickstart/
+2. **About GRPC. (n.d.). gRPC.** https://grpc.io/about/
 
-About GRPC. (n.d.). gRPC. https://grpc.io/about/
+3. **Pankaj, P. (2023, September 12). Microservices Communication using gRPC Protocol.** https://www.linkedin.com/pulse/microservices-communication-using-grpc-protocol-prabhat-pankaj
 
-Pankaj, P. (2023, September 12). Microservices Communication using gRPC Protocol. https://www.linkedin.com/pulse/microservices-communication-using-grpc-protocol-prabhat-pankaj
+4. **Introduction to GRPC. (2024, July 25). gRPC.** https://grpc.io/docs/what-is-grpc/introduction/
 
-Introduction to GRPC. (2024, July 25). gRPC. https://grpc.io/docs/what-is-grpc/introduction/
-
-gRPC vs REST - Difference Between Application Designs - AWS. (n.d.). Amazon Web Services, Inc. https://aws.amazon.com/compare/the-difference-between-grpc-and-rest/
+5. **gRPC vs REST - Difference Between Application Designs - AWS. (n.d.). Amazon Web Services, Inc.** https://aws.amazon.com/compare/the-difference-between-grpc-and-rest/
