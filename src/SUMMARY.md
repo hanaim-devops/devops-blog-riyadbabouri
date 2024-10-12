@@ -1,5 +1,6 @@
 # Summary
 
 - [Home](./README.md)
-- [Dev blog](./dev-blog-name-in-kebab-case/README.md)
+- [Dev blog](./de-voordelen-van-gRPC-in-microservice-architecturen/README.md)
 - [Onderzoeksplan](./onderzoeksplan.md)
+
